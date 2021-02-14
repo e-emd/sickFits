@@ -1,5 +1,5 @@
-import 'dotenv';
 import { config, createSchema } from '@keystone-next/keystone/schema';
+import 'dotenv/config';
 
 const databaseUrl = process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorials';
 
@@ -9,7 +9,7 @@ const sessionConfig = {
 };
 
 export default config({
-    server: {
+     server: {
         cors: {
             origin: [process.env.FRONTEND_URL],
             credentials: true
