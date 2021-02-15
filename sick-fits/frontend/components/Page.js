@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import GlobalStyles from '../components/styles/GlobalStyles';
 import Header from './Header';
 
-export default function Page() {
+export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
       <Header />
-      <InnerStyles>hello</InnerStyles>
+      <InnerStyles>{children}</InnerStyles>
     </div>
   );
 }
