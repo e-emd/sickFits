@@ -5,6 +5,7 @@ import 'dotenv/config';
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
+import { insertSeedData } from './seed-data';
 
 const databaseUrl = process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorials';
 
@@ -33,7 +34,12 @@ export default withAuth(config({
     db: {
         adapter: 'mongoose',
         url: databaseUrl,
-        // TODO: add data seeding here
+        async onConnect(keystone) {
+            console.log('Connected to database');
+            if (process.argv.includes('--seed-data')) {
+             await insertSeedData(keystone);   
+            }
+        }
     },
     lists: createSchema({
         // Schema items go in here
