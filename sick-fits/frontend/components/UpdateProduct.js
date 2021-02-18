@@ -1,4 +1,4 @@
-import useQuery, { useMutation } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 import useForm from '../lib/useForm';
 import DisplayError from './ErrorMessage';
