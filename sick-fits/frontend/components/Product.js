@@ -3,6 +3,7 @@ import ItemStyles from './styles/ItemStyles';
 import TitleStyles from './styles/Title';
 import PriceTagStyles from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
+import DeleteProduct from './DeleteProduct';
 
 export default function Product({ product }) {
   return (
@@ -27,6 +28,7 @@ export default function Product({ product }) {
         >
           Edit ✏️
         </Link>
+        <DeleteProduct id={product.id}>Delete</DeleteProduct>
       </div>
     </ItemStyles>
   );
