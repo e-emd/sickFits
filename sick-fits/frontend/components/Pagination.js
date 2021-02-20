@@ -38,7 +38,7 @@ export default function Pagination({ page }) {
       {page >= pageCount ? (
         <></>
       ) : (
-        <Link href={`/ products / ${page + 1}`}>Next →</Link>
+        <Link href={`/products/${page + 1}`}>Next →</Link>
       )}
     </PaginationStyles>
   );
